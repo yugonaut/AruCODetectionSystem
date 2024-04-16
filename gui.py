@@ -28,9 +28,11 @@ class MainWindow(QMainWindow):
         self.load_button.clicked.connect(self.load_image)
         layout.addWidget(self.load_button)     
 
+
+        # ToDo add drop down menu with possible nodes
         grid_layout = QGridLayout()
         layout.addLayout(grid_layout)
-        titles = ["Number 1:", "Number 2:", "Number 3:", "Number 4:", "Number 5:", "Number 6:"]
+        titles = ["Scale Point A1:", "Scale Point B1:", "Scale Point A2:", "Scale Point B2:", "Scale Distance A:", "Scale Distance B:"]
         self.number_inputs = []
         for i, title in enumerate(titles):
             label = QLabel(title)
