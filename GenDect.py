@@ -62,6 +62,8 @@ class GenDect:
                 cv.line(image, bottomRight, bottomLeft, (0, 255, 0), 2)
                 cv.line(image, bottomLeft, topLeft, (0, 255, 0), 2)
                 # compute and draw the center (x, y)-coordinates of the ArUco
+
+
                 # marker
                 cX = int((topLeft[0] + bottomRight[0]) / 2.0)
                 cY = int((topLeft[1] + bottomRight[1]) / 2.0)
@@ -74,6 +76,8 @@ class GenDect:
                     0.5, (0, 255, 0), 2)
                 print("[INFO] ArUco marker ID: {}".format(markerID))
                 # show the output image
+        for i in range(1,8):
+            cv.line(image, id_dict[i], id_dict[i+1],(0, 255, 0), 2)
         cv.imshow("Image", image)
         cv.waitKey(0)
         return id_dict
@@ -103,5 +107,7 @@ class GenDect:
         scale_factor = np.mean([scale_factor1, scale_factor2])
 
         return scale_factor
+    
+
     
     

@@ -38,6 +38,7 @@ class MainWindow(QMainWindow):
     
     def process_image(self, image):
         self.id_dict = self.detector.detect(image)
+        print(self.id_dict)
         self.scale = self.detector.scale(id_dict = self.id_dict, image = self.image)
         print(self.scale)
 
